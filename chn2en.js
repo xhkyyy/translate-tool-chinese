@@ -95,7 +95,7 @@ function bing(sentenceStr) {
     });
 }
 
-function qq(sentenceStr) {
+function tencent(sentenceStr) {
   Nightmare({
       show: false
     }).goto('https://fanyi.qq.com')
@@ -108,7 +108,7 @@ function qq(sentenceStr) {
     .evaluate(() => document.querySelector('div.textpanel-target > div.textpanel-target-textblock').innerText)
     .end()
     .then(text => {
-      logx("QQ", text)
+      logx("Tencent", text)
     })
     .catch(error => {
       console.error('Translate failed:', error)
@@ -129,7 +129,7 @@ function baidu(sentenceStr) {
     .evaluate(() => document.querySelector('div.output-bd').innerText)
     .end()
     .then(text => {
-      logx("baidu", text)
+      logx("Baidu", text)
     })
     .catch(error => {
       console.error('Translate failed:', error)
@@ -141,11 +141,10 @@ function chnToEn(sentenceStr) {
   sogou(sentenceStr);
   youdao(sentenceStr);
   bing(sentenceStr);
-  qq(sentenceStr);
+  tencent(sentenceStr);
   baidu(sentenceStr);
 }
 
 var args = process.argv.slice(2);
 
 (args.length > 0 ? chnToEn(args[0]) : readSentenceFromStdin(chnToEn));
-
