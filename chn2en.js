@@ -9,7 +9,6 @@ function readSentenceFromStdin(trans) {
       sentence += data;
     }
   });
-
   stdin.on('end', function () {
     trans(sentence);
   });
@@ -146,5 +145,4 @@ function chnToEn(sentenceStr) {
 }
 
 var args = process.argv.slice(2);
-
 (args.length > 0 ? chnToEn(args[0]) : readSentenceFromStdin(chnToEn));
