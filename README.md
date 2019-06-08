@@ -2,16 +2,16 @@
 
 ## To install dependencies
 
-```sh
+```shell
 npm install
 ```
 
 ## Examples
 
-```sh
+```shell
 node chn2en.js "今天天气怎么样？"
 
-# 或
+# OR
 
 node chn2en.js < demo_chn.txt
 ```
