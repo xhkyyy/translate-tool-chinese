@@ -10,6 +10,7 @@ npm install
 
 ----------------------------------------
 
+Simply run:
 
 ```shell
 node chn2en.js node chn2en.js "今天星期几？今天星期一。"
@@ -21,7 +22,7 @@ node chn2en.js < demo_chn.txt
 
 ----------------------------------------
 
-RESULT:
+Result:
 
 ```
 Sogou:
