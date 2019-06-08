@@ -21,6 +21,8 @@ node chn2en.js < demo_chn.txt
 
 ----------------------------------------
 
+RESULT:
+
 ```
 Sogou:
 What day is today? Today is Monday.
