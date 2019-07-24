@@ -77,14 +77,14 @@ function bing(sentenceStr) {
   Nightmare({
       show: false
     }).goto('https://www.bing.com/translator')
-    .select('#t_tl', 'en')
-    .type('#t_sv', sentenceStr)
+    .select('#tta_tgtsl', 'en')
+    .type('#tta_input', sentenceStr)
     .wait(function () {
-      const t = document.querySelector('#t_tv').value.trim();
+      const t = document.querySelector('#tta_output').value.trim();
       return t.length > 0 && t != '...' && (!t.endsWith('...') || !t.endsWith('......'));
     })
     .wait(3000)
-    .evaluate(() => document.querySelector('#t_tv').value)
+    .evaluate(() => document.querySelector('#tta_output').value)
     .end()
     .then(text => {
       logx("Bing", text)
